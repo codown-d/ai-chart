@@ -7,6 +7,9 @@ RUN npm config set registry https://registry.npmmirror.com/
 # 设置工作目录
 WORKDIR /app
 
+RUN npm cache clean --force
+RUN npm install -g typescript 
+
 # 安装 pnpm
 RUN npm install -g pnpm
 
