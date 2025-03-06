@@ -1,6 +1,5 @@
 import { createContext, useState, useContext, useEffect } from "react";
 import { useMobileDetect } from ".";
-import { getUserInfo } from "../fetch";
 import { type GetProp } from "antd";
 import { Attachments } from "@ant-design/x";
 interface UserInfoProps {

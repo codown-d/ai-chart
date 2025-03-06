@@ -20,9 +20,7 @@ import {
   HeartOutlined,
   PaperClipOutlined,
   PlusOutlined,
-  ReadOutlined,
   ShareAltOutlined,
-  SmileOutlined,
 } from "@ant-design/icons";
 import { Badge, Button, type GetProp, Space } from "antd";
 import {
@@ -64,13 +62,13 @@ const Independent: React.FC = () => {
             },
           ],
         });
-
-        for await (const chunk of XStream({
+        const sseChunks: string[] = [];
+        for await (let chunk of XStream({
           readableStream: response.body,
         })) {
           console.log(chunk);
         }
-      onSuccess(`Mock success return. You said: ${chunk}`);
+          onSuccess(`Mock success return. You said: ${message}`);
     },
   });
   const { onRequest, messages, setMessages } = useXChat({
