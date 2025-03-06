@@ -1,3 +1,4 @@
+import { ConstVar } from "../constant";
 import { useStyle } from "../hooks/style";
 
 export const LogoNode = () => {
@@ -9,7 +10,7 @@ export const LogoNode = () => {
         draggable={false}
         alt="logo"
       />
-      <span>Ant Design X</span>
+      <span>{ConstVar.name}</span>
     </div>
   );
 };

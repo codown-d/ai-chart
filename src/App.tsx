@@ -5,7 +5,12 @@ import Independent from "./Independent";
 function App() {
   return (
     <GlobalProvider>
-      <Independent />
+
+      <div className="flex items-center justify-center h-full">
+        <div className="w-[1000px]">
+          <Independent />
+        </div>
+      </div>
     </GlobalProvider>
   );
 }

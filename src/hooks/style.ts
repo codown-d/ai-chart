@@ -8,9 +8,9 @@ export const useStyle = createStyles(({ token, css }) => {
         height: 722px;
         border-radius: ${token.borderRadius}px;
         display: flex;
+        overflow:hidden;
         background: ${token.colorBgContainer};
         font-family: AlibabaPuHuiTi, ${token.fontFamily}, sans-serif;
-  
         .ant-prompts {
           color: ${token.colorText};
         }

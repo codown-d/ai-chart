@@ -21,9 +21,11 @@ import {
   PaperClipOutlined,
   PlusOutlined,
   ShareAltOutlined,
+  UserOutlined,
 } from "@ant-design/icons";
 import { Badge, Button, type GetProp, Space } from "antd";
 import {
+  ConstVar,
   defaultConversationsItems,
   placeholderPromptsItems,
   roles,
@@ -113,8 +115,8 @@ const Independent: React.FC = () => {
       <Welcome
         variant="borderless"
         icon="https://mdn.alipayobjects.com/huamei_iwk9zp/afts/img/A*s5sNRo5LjfQAAAAAAAAAAAAADgCCAQ/fmt.webp"
-        title="Hello, I'm Ant Design X"
-        description="Base on Ant Design, AGI product interface solution, create a better intelligent vision~"
+        title={`Hello, I'm ${ConstVar.name}!`}
+        description={'基于DeepSeek，AGI产品界面解决方案，创造更好的问答体验~'}
         extra={
           <Space>
             <Button icon={<ShareAltOutlined />} />
@@ -123,7 +125,7 @@ const Independent: React.FC = () => {
         }
       />
       <Prompts
-        title="Do you want?"
+        title={'你想要？'}
         items={placeholderPromptsItems}
         styles={{
           list: {
@@ -141,6 +143,7 @@ const Independent: React.FC = () => {
   const items: GetProp<typeof Bubble.List, "items"> = messages.map(
     ({ id, message, status }) => ({
       key: id,
+      avatar:{ icon: <UserOutlined />, style: { background: '#964B00' } },
       loading: status === "loading",
       role: status === "local" ? "local" : "ai",
       content: message,
@@ -157,7 +160,7 @@ const Independent: React.FC = () => {
           className={styles.addBtn}
           icon={<PlusOutlined />}
         >
-          New Conversation
+          {ConstVar.newConversation}
         </Button>
         <Conversations
           items={conversationsItems}

@@ -2,6 +2,7 @@ import { CloudUploadOutlined } from "@ant-design/icons";
 import { Attachments, Sender } from "@ant-design/x";
 import { type GetProp } from "antd";
 import { useGlobalContext } from "../hooks/GlobalContext";
+import { ConstVar } from "../constant";
 
 export const SenderHeader = () => {
   let {attachedFiles, setAttachedFiles,headerOpen, setHeaderOpen} = useGlobalContext()
@@ -9,7 +10,7 @@ export const SenderHeader = () => {
     setAttachedFiles(info.fileList);
   return (
     <Sender.Header
-      title="Attachments"
+      title={ConstVar.attachments}
       open={headerOpen}
       onOpenChange={setHeaderOpen}
       styles={{
@@ -24,11 +25,11 @@ export const SenderHeader = () => {
         onChange={handleFileChange}
         placeholder={(type) =>
           type === "drop"
-            ? { title: "Drop file here" }
+            ? { title: "拖拽文件到找这里" }
             : {
                 icon: <CloudUploadOutlined />,
-                title: "Upload files",
-                description: "Click or drag files to this area to upload",
+                title: "上传文件",
+                description: "点击或拖拽文件到该区域即可上传",
               }
         }
       />
