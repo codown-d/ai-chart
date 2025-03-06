@@ -1,9 +1,9 @@
 import { message } from "antd";
 import axios, { AxiosResponse } from "axios";
 import { debounce } from "lodash";
-const API_URL = import.meta.env.VITE_API_URL;
+const VITE_API_URL = import.meta.env.VITE_API_URL;
 const axiosIns = axios.create({
-  baseURL: API_URL, // API 基础 URL
+  baseURL: VITE_API_URL, // API 基础 URL
   timeout: 50000, // 超时设置
   headers: {
     "Content-Type": "application/json",
